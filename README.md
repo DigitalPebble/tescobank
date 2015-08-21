@@ -15,7 +15,9 @@ CREATE TABLE tescobank (
 
 INSERT INTO tescobank (url, metadata) VALUES ("http://www.tescobank.com/sitemap.xml","isSitemap=true");
 
-# TODO configure CloudSearch domain
+# configure CloudSearch domain
+
+The script `createCSDomain.sh` can be used with the AWS CLI to configure a CloudSearch domain.
 
 # run
 
