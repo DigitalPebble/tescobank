@@ -13,5 +13,5 @@ aws cloudsearch define-index-field --domain-name $DOMAIN --name content --type t
 aws cloudsearch define-index-field --domain-name $DOMAIN --name description --type text --sort-enabled false
 aws cloudsearch define-index-field --domain-name $DOMAIN --name keywords --type text-array --sort-enabled false
 aws cloudsearch define-index-field --domain-name $DOMAIN --name title --type text --sort-enabled false
-aws cloudsearch define-index-field --domain-name $DOMAIN --name url --type literal --sort-enabled false --facet-enabled false
+aws cloudsearch define-index-field --domain-name $DOMAIN --name url --type literal --sort-enabled false --facet-enabled false --search-enabled false
 
