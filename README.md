@@ -6,6 +6,7 @@ DROP TABLE tescobank;
 
 CREATE TABLE tescobank (
  url VARCHAR(512),
+ status VARCHAR(16) DEFAULT 'DISCOVERED',
  nextfetchdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  metadata TEXT,
  bucket SMALLINT DEFAULT 0,
