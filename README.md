@@ -22,3 +22,9 @@ The script `createCSDomain.sh` can be used with the AWS CLI to configure a Cloud
 # run
 
 `mvn exec:java -Dexec.mainClass=com.digitalpebble.stormcrawler.CrawlTopology -Dexec.args="-conf crawler-conf.yaml -local`
+
+or with Storm installed 
+
+`storm jar target/stormcrawler-tescobank-0.1-SNAPSHOT.jar com.digitalpebble.stormcrawler.CrawlTopology -conf crawler-conf.yaml -local`
+
+remove `-local` to run in deployed mode.
