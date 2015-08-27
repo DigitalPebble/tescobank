@@ -36,6 +36,13 @@
       "params": {
         "regexFilterFile": "tesco-regex-filters.txt"
       }
+    },
+    {
+      "class": "com.digitalpebble.storm.crawler.filtering.robots.RobotsFilter",
+      "name": "RobotsFilter",
+      "params": {
+      }
     }
+    
   ]
 }
