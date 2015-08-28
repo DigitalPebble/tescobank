@@ -9,9 +9,9 @@ fi
 
 aws cloudsearch create-domain --domain-name $DOMAIN
 
-aws cloudsearch define-index-field --domain-name $DOMAIN --name content --type text --sort-enabled false
+aws cloudsearch define-index-field --domain-name $DOMAIN --name content --type text --sort-enabled false --return-enabled false
 aws cloudsearch define-index-field --domain-name $DOMAIN --name description --type text --sort-enabled false
-aws cloudsearch define-index-field --domain-name $DOMAIN --name keywords --type text-array
+aws cloudsearch define-index-field --domain-name $DOMAIN --name keywords --type text-array --return-enabled false --highlight-enabled false
 aws cloudsearch define-index-field --domain-name $DOMAIN --name title --type text --sort-enabled false
 aws cloudsearch define-index-field --domain-name $DOMAIN --name url --type literal --sort-enabled false --facet-enabled false --search-enabled false
 
