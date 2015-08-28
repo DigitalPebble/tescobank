@@ -1,6 +1,8 @@
-TODO explain how to setup crawler with tescobank taken as an example
-
 CREATE DATABASE crawl;
+
+CREATE USER 'tesco'@'localhost' IDENTIFIED BY 'bank';
+GRANT ALL PRIVILEGES ON crawl.tescobank TO 'tesco'@'localhost' IDENTIFIED BY PASSWORD 'bank' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
 DROP TABLE tescobank;
 
@@ -20,6 +22,8 @@ INSERT INTO tescobank (url, metadata) VALUES ("http://www.tescobank.com/sitemap.
 The script `createCSDomain.sh` can be used with the AWS CLI to configure a CloudSearch domain.
 
 # run
+
+`mvn clean install`
 
 `mvn exec:java -Dexec.mainClass=com.digitalpebble.stormcrawler.CrawlTopology -Dexec.args="-conf crawler-conf.yaml -local`
 

@@ -4,8 +4,8 @@
 
 mysql.url: "jdbc:mysql://localhost:3306/crawl"
 mysql.table: "tescobank"
-mysql.user: "root"
-mysql.password: "bucfjfyu"
+mysql.user: "tesco"
+mysql.password: "bank"
 
 ###############################
 #  CloudSearch Configuration  #
@@ -19,7 +19,7 @@ cloudsearch.batch.maxSize: 50
 cloudsearch.batch.max.time.buffered: 10
 
 # specify the doc endpoint to use unless in batch dump mode
-cloudsearch.endpoint: doc-storm-tescobank-pvukzvttjdqjdowrrliattjypq.eu-west-1.cloudsearch.amazonaws.com
+cloudsearch.endpoint: doc-storm-tescobank2-uptv4ikn633c7q3yrxu46fkq3e.eu-west-1.cloudsearch.amazonaws.com
 
 cloudsearch.region: "eu-west-1"
 
@@ -30,22 +30,12 @@ cloudsearch.region: "eu-west-1"
 # GENERIC SC CONFIG #
 #####################
 
-sitemap.sniffContent: false
-
-fetcher.server.delay: 1.0
-fetcher.server.min.delay: 0.0
-fetcher.queue.mode: "byHost"
-fetcher.threads.per.queue: 1
-fetcher.threads.number: 10
-
-partition.url.mode: "byHost"
+fetcher.server.delay: 2.0
 
 # lists the metadata to transfer to the outlinks
 # used by Fetcher for redirections, sitemapparser, etc...
 metadata.transfer:
 - isSitemap
-- key2
-- key3
 
 http.agent.name: "StormCrawler"
 http.agent.version: "1.0"
@@ -53,17 +43,7 @@ http.agent.description: "a Storm-based crawler"
 http.agent.url: "https://github.com/DigitalPebble/storm-crawler"
 http.agent.email: "stormcrawler@digitalpebble.com"
 
-http.accept.language: "en-us,en-gb,en;q=0.7,*;q=0.3"
-http.accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-http.content.limit: 65536
-http.store.responsetime: true
-http.timeout: 10000
-
-http.robots.403.allow: true
-
-protocols: "http,https"
-http.protocol.implementation: "com.digitalpebble.storm.crawler.protocol.httpclient.HttpProtocol"
-https.protocol.implementation: "com.digitalpebble.storm.crawler.protocol.httpclient.HttpProtocol"
+http.content.limit: -1
 
 parsefilters.config.file: "tesco.parsefilters.json"
 urlfilters.config.file: "tesco.urlfilters.json"
@@ -76,8 +56,6 @@ fetchInterval.fetch.error: 120
 
 # revisit a page with an error every month (value in minutes)
 fetchInterval.error: 44640
-
-stormcrawler.indexer.class: "com.digitalpebble.storm.crawler.indexing.StdOutIndexer"
 
 # configuration for the classes extending AbstractIndexerBolt
 # indexer.md.filter: "someKey=aValue"
