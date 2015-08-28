@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<regex-normalize>
+
+<!-- removes parameters from URL -->
+<regex>
+  <pattern>\?.+</pattern>
+  <substitution></substitution>
+</regex>
+
+</regex-normalize>
