@@ -19,7 +19,7 @@ cloudsearch.batch.maxSize: 50
 cloudsearch.batch.max.time.buffered: 10
 
 # specify the doc endpoint to use unless in batch dump mode
-cloudsearch.endpoint: doc-storm-tescobank2-uptv4ikn633c7q3yrxu46fkq3e.eu-west-1.cloudsearch.amazonaws.com
+cloudsearch.endpoint: doc-storm-tescobank-pvukzvttjdqjdowrrliattjypq.eu-west-1.cloudsearch.amazonaws.com
 
 cloudsearch.region: "eu-west-1"
 
