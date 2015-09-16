@@ -23,7 +23,7 @@ import backtype.storm.tuple.Fields;
 
 import com.digitalpebble.storm.crawler.ConfigurableTopology;
 import com.digitalpebble.storm.crawler.Constants;
-import com.digitalpebble.storm.crawler.bolt.FetcherBolt;
+import com.digitalpebble.storm.crawler.bolt.SimpleFetcherBolt;
 import com.digitalpebble.storm.crawler.bolt.SiteMapParserBolt;
 import com.digitalpebble.storm.crawler.bolt.StatusStreamBolt;
 import com.digitalpebble.storm.crawler.bolt.URLPartitionerBolt;
@@ -52,7 +52,7 @@ public class CrawlTopology extends ConfigurableTopology {
         builder.setBolt("partitioner", new URLPartitionerBolt())
                 .shuffleGrouping("spout");
 
-        builder.setBolt("fetch", new FetcherBolt()).fieldsGrouping(
+        builder.setBolt("fetch", new SimpleFetcherBolt()).fieldsGrouping(
                 "partitioner", new Fields("key"));
 
         builder.setBolt("sitemap", new SiteMapParserBolt())
